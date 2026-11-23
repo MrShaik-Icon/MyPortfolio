@@ -203,3 +203,28 @@ window.addEventListener("load", () => {
     });
 
 });
+
+function openContactModal() {
+    document.getElementById("contactModal")
+        .classList.add("active");
+}
+
+function closeContactModal() {
+    document.getElementById("contactModal")
+        .classList.remove("active");
+}
+
+// Close popup when clicking outside
+document.getElementById("contactModal")
+    .addEventListener("click", function(e) {
+        if (e.target === this) {
+            closeContactModal();
+        }
+    });
+
+// Close popup using Escape key
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+        closeContactModal();
+    }
+});

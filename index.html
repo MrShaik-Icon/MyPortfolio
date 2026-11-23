@@ -372,7 +372,56 @@
 </a>
       <a href="#home"><span>⌂</span><small>LOCATION</small><b>India</b></a>
     </div>
-    <a class="gold-button contact-button" href="mailto:sk.khwazaicon@gmail.com" id="contactButton">Say Hello <span>↗</span></a>
+    <button class="gold-button contact-button"
+        id="contactButton"
+        onclick="openContactModal()">
+    Say Hello <span>↗</span>
+</button>
+<!-- Contact Popup -->
+<div class="contact-modal" id="contactModal">
+
+    <div class="contact-box">
+
+        <button class="close-modal" onclick="closeContactModal()">
+            &times;
+        </button>
+
+        <span class="contact-tag">LET'S CONNECT</span>
+
+        <h2>Say <span>Hello!</span></h2>
+
+        <p>Have a project or opportunity? I'd love to hear from you.</p>
+
+        <form action="https://formsubmit.co/sk.khwazaicon@gmail.com"
+              method="POST">
+
+            <input type="hidden" name="_subject"
+                   value="New Portfolio Contact Message">
+
+            <input type="text"
+                   name="name"
+                   placeholder="Your Name"
+                   required>
+
+            <input type="email"
+                   name="email"
+                   placeholder="Your Email"
+                   required>
+
+            <textarea name="message"
+                      placeholder="Your Message..."
+                      rows="4"
+                      required></textarea>
+
+            <button type="submit" class="send-btn">
+                Send Message ↗
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
   </section>
 </main>
 
