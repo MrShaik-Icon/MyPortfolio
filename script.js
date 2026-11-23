@@ -3,42 +3,59 @@
 // ==========================================
 /* Continuous left-to-right typing animation */
 /* Start */
-const typingName = document.getElementById("typingName");
+document.addEventListener("DOMContentLoaded", function () {
 
-const names = ["SK KHAWZA", "MR SHAIK"];
+    const typingName = document.getElementById("typingName");
 
-let nameIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-function animateName() {
-    const currentName = names[nameIndex];
-
-    if (!deleting) {
-        typingName.textContent = currentName.substring(0, charIndex + 1);
-        charIndex++;
-
-        if (charIndex === currentName.length) {
-            deleting = true;
-            setTimeout(animateName, 1200);
-            return;
-        }
-
-        setTimeout(animateName, 150);
-    } else {
-        typingName.textContent = currentName.substring(0, charIndex - 1);
-        charIndex--;
-
-        if (charIndex === 0) {
-            deleting = false;
-            nameIndex = (nameIndex + 1) % names.length;
-        }
-
-        setTimeout(animateName, 60);
+    if (!typingName) {
+        console.error("Typing name element not found!");
+        return;
     }
-}
 
-animateName();
+    const names = ["SK KHAWZA", "MR SHAIK"];
+
+    let nameIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function animateName() {
+
+        const currentName = names[nameIndex];
+
+        if (!deleting) {
+
+            typingName.textContent =
+                currentName.substring(0, charIndex + 1);
+
+            charIndex++;
+
+            if (charIndex === currentName.length) {
+                deleting = true;
+                setTimeout(animateName, 1500);
+                return;
+            }
+
+            setTimeout(animateName, 150);
+
+        } else {
+
+            typingName.textContent =
+                currentName.substring(0, charIndex - 1);
+
+            charIndex--;
+
+            if (charIndex === 0) {
+                deleting = false;
+                nameIndex = (nameIndex + 1) % names.length;
+            }
+
+            setTimeout(animateName, 60);
+        }
+    }
+
+    animateName();
+
+});
 
 /* END */
 

@@ -5,14 +5,15 @@
 /* Continuous left-to-right typing animation */
 /* Start */
 .animated-name {
-    color: #c5a46d;
     display: inline-block;
     white-space: nowrap;
+    color: #c5a46d;
 }
 
 .typing-cursor {
     display: inline-block;
     color: #c5a46d;
+    margin-left: 3px;
     animation: blink 0.7s infinite;
 }
 
