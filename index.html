@@ -12,10 +12,48 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
-  <script src="script.js"></script>
+ <!--  <script src="script.js"></script> -->
 </head>
 <body>
 
+<!-- CINEMATIC WELCOME INTRO part 1 -->  
+
+<div id="welcome-intro">
+
+    <div class="intro-background"></div>
+
+    <!-- Golden Circular Ring -->
+    <div class="gold-ring">
+
+        <div class="gold-orbit"></div>
+
+    </div>
+
+    <!-- Welcome Text -->
+    <div class="intro-content">
+
+        <h2 class="intro-line welcome-text">
+            WELCOME TO MY
+        </h2>
+
+        <h1 class="intro-line portfolio-text">
+            PORTFOLIO
+        </h1>
+
+        <h2 class="intro-line name-text">
+            MR SHAIK
+        </h2>
+
+        <p class="intro-line tagline-text">
+            CREATIVE • PROFESSIONAL • PERSONAL
+        </p>
+
+    </div>
+
+</div>
+
+<!-- CINEMATIC WELCOME INTRO part 1 end  -->  
+ <main id="main-portfolio">
 <header class="header">
   <a class="logo" href="#home">MR SHAIK<span>.</span></a>
   <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
@@ -25,13 +63,15 @@
   </nav>
 </header>
 
-<main>
+<!-- <main> part 1 --> 
+   
+
   <section class="hero wrap" id="home">
     <div class="hero-text">
       <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
       <!-- <h1>SHAIK <span>KHAWZA</span></h1> -->
        <h1 class="animated-name">
-    <span id="typingName"></span><span class="typing-cursor">|</span>
+    Hi, I'm <span id="typingName"></span><span class="typing-cursor">|</span>
 </h1>
       <div class="role-line"><span class="cloud-mark">✦</span><span>ServiceNow<br><b>&amp; Application Support</b></span></div>
       <p class="hero-description">A technology professional passionate about keeping business-critical applications stable, solving problems and continuously learning.</p>
@@ -243,24 +283,77 @@
 
             </div>
 
+<!-- PREPARING FOR THE NEXT CHAPTER -->
+<div class="resume-subsection growth-section">
 
+    <h3 class="resume-heading growth-heading">
+        <span>🚀</span>
+        Preparing for the Next Chapter
+    </h3>
+
+    <div class="experience-heading">
+        <div>
+            <h4>Personal Growth & Professional Development</h4>
+        </div>
+
+        <span class="date-pill">May 2024 – Present</span>
+    </div>
+
+    <ul class="resume-list">
+
+        <li>Dedicated this phase to personal responsibilities while continuing to focus on professional growth and development.</li>
+
+        <li>Investing time in learning new technologies, strengthening technical knowledge and exploring modern IT solutions.</li>
+
+        <li>Enhancing problem-solving, analytical and technical skills to stay aligned with evolving industry requirements.</li>
+
+        <li>Preparing to take on new professional challenges and contribute effectively to a forward-looking organization.</li>
+
+    </ul>
+
+    <p class="growth-quote">
+        "A pause in my career, not a pause in my growth.
+        I'm learning, evolving and preparing for a stronger comeback."
+    </p>
+
+</div>
             <!-- ACHIEVEMENTS -->
-            <div class="resume-subsection">
+<div class="resume-subsection">
 
-                <h3 class="resume-heading achievement-heading">
-                    <span>🏆</span>
-                    Awards &amp; Achievements
-                </h3>
+    <h3 class="resume-heading achievement-heading">
+        <span>🏆</span>
+        Awards &amp; Achievements
+    </h3>
 
-                <ul class="resume-list">
+    <div class="award-layout">
 
-                    <li>Recognized as Star Performer of the Quarter (Q1 2022) for successful deployment and quality work delivered on time.</li>
+        <ul class="resume-list">
+            <li>
+                Recognized as Star Performer of the Quarter (Q1 FY22)
+                for successful deployment and quality work delivered on time.
+            </li>
 
-                    <li>Received Spot and Applause Awards for critical project contributions.</li>
+            <li>
+                Received Spot and Applause Awards for critical project contributions.
+            </li>
+        </ul>
 
-                </ul>
+        <!-- AWARD CERTIFICATE PREVIEW -->
+        <button class="award-certificate certificate-preview-btn"
+                type="button"
+                data-certificate-src="images/star-performer-certificate.png"
+                data-certificate-alt="Star Performer Award Certificate">
 
-            </div>
+            <img src="images/star-performer-certificate.png"
+                 alt="Star Performer Award Certificate">
+
+            <span>VIEW CERTIFICATE ↗</span>
+
+        </button>
+
+    </div>
+
+</div>
 
         </div>
 
@@ -280,10 +373,15 @@
 
 <article class="featured-cert azure-cert">
 
-    <div class="azure-logo">
-        <img src="images/azure-fundamentals.png"
-             alt="Microsoft Azure Fundamentals AZ-900 Certificate">
-    </div>
+    <button class="azure-logo certificate-preview-btn"
+        type="button"
+        data-certificate-src="images/azure-fundamentals.png"
+        data-certificate-alt="Microsoft Azure Fundamentals Certificate">
+
+    <img src="images/azure-fundamentals.png"
+         alt="Microsoft Azure Fundamentals AZ-900 Certificate">
+
+</button>
 
     <div class="azure-details">
 
@@ -306,10 +404,15 @@
     <!-- ORACLE CERTIFICATE -->
     <article class="featured-cert oracle-cert">
 
-        <div class="oracle-logo">
-            <img src="images/oracle-foundations.png"
-                 alt="Oracle Certified Foundations Associate">
-        </div>
+        <button class="oracle-logo certificate-preview-btn"
+        type="button"
+        data-certificate-src="images/oracle-foundations.png"
+        data-certificate-alt="Oracle Certified Foundations Associate Certificate">
+
+    <img src="images/oracle-foundations.png"
+         alt="Oracle Certified Foundations Associate">
+
+</button>
 
         <div class="oracle-details">
             <p class="eyebrow">ORACLE UNIVERSITY</p>
@@ -428,8 +531,28 @@
 
 </div>
   </section>
-</main>
+
 
 <footer class="footer"><a class="logo" href="#home">MR SHAIK<span>.</span></a><p>Designed &amp; developed by MR SHAIK</p><small>© <span id="year"></span> All rights reserved.</small></footer>
+<script src="script.js"></script>
+</main>
+<!-- CERTIFICATE IMAGE POPUP -->
+<div class="certificate-preview-modal" id="certificatePreviewModal">
+
+    <div class="certificate-preview-box">
+
+        <button class="certificate-preview-close"
+                id="certificatePreviewClose"
+                type="button">
+            &times;
+        </button>
+
+        <img id="certificatePreviewImage"
+             src=""
+             alt="Certificate Preview">
+
+    </div>
+
+</div>
 </body>
 </html>

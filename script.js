@@ -285,3 +285,131 @@ document.addEventListener("keydown", function(e) {
         closeContactModal();
     }
 });
+
+/* =================================
+   MR SHAIK PORTFOLIO INTRO
+================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    console.log("Portfolio JavaScript loaded!");
+
+    const intro = document.getElementById("welcome-intro");
+    const portfolio = document.getElementById("main-portfolio");
+
+    console.log("Intro:", intro);
+    console.log("Portfolio:", portfolio);
+
+    if (!intro || !portfolio) {
+        console.error("Required HTML elements are missing!");
+        return;
+    }
+
+    // Show portfolio after 7 seconds
+    setTimeout(() => {
+
+        console.log("Opening main portfolio...");
+
+        intro.style.opacity = "0";
+        intro.style.visibility = "hidden";
+        intro.style.pointerEvents = "none";
+
+        portfolio.style.opacity = "1";
+        portfolio.style.visibility = "visible";
+
+        setTimeout(() => {
+            intro.style.display = "none";
+        }, 1100);
+
+    }, 5000);
+
+});
+
+// =====================================
+// CERTIFICATE IMAGE POPUP
+// =====================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const certificateButtons = document.querySelectorAll(
+        ".certificate-preview-btn"
+    );
+
+    const certificateModal = document.getElementById(
+        "certificatePreviewModal"
+    );
+
+    const certificateImage = document.getElementById(
+        "certificatePreviewImage"
+    );
+
+    const closeCertificate = document.getElementById(
+        "certificatePreviewClose"
+    );
+
+    if (!certificateModal || !certificateImage) {
+        return;
+    }
+
+    // OPEN CERTIFICATE
+    certificateButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const imageSource = this.getAttribute(
+                "data-certificate-src"
+            );
+
+            const imageAlt = this.getAttribute(
+                "data-certificate-alt"
+            );
+
+            certificateImage.src = imageSource;
+            certificateImage.alt = imageAlt || "Certificate";
+
+            certificateModal.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+
+        });
+
+    });
+
+
+    // CLOSE CERTIFICATE
+    function closeCertificatePopup() {
+
+        certificateModal.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+        certificateImage.src = "";
+
+    }
+
+
+    // CLOSE BUTTON
+    closeCertificate.addEventListener("click", closeCertificatePopup);
+
+
+    // CLICK OUTSIDE IMAGE
+    certificateModal.addEventListener("click", function (event) {
+
+        if (event.target === certificateModal) {
+            closeCertificatePopup();
+        }
+
+    });
+
+
+    // ESCAPE KEY
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+            closeCertificatePopup();
+        }
+
+    });
+
+});
+

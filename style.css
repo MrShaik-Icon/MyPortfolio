@@ -2,22 +2,294 @@
 @media(min-width:900px){.hero{min-height:480px}.section{padding-top:50px;padding-bottom:40px}.skills-grid{gap:12px}.skill{min-height:84px}.project-banner{height:125px}.project-info p{min-height:55px}}
 @media(max-width:650px){.header{height:58px;padding:0 6%}.menu-btn{display:block}nav{display:none;position:absolute;top:58px;left:0;right:0;padding:16px 7%;background:#10111b;border-bottom:1px solid var(--line);flex-direction:column;gap:12px}nav.open{display:flex}.wrap{width:90%}.hero{grid-template-columns:1fr;gap:24px;padding-top:42px;padding-bottom:27px}.hero h1{font-size:48px}.hero-photo{height:240px;max-width:100%;width:100%}.hero-bottom{font-size:6px;gap:7px;letter-spacing:.7px;flex-wrap:wrap}.section{padding-top:31px;padding-bottom:24px}.section-title h2{font-size:20px}.about-card{padding:18px}.skills-grid{grid-template-columns:repeat(3,1fr);gap:7px}.skill{min-height:70px}.skill span{font-size:8px}.experience-card{gap:10px;padding:13px}.company-logo{width:36px;height:36px;flex-basis:36px;font-size:10px}.experience-heading{display:block}.date-pill{display:inline-block;margin:5px 0}.experience-heading h3{font-size:13px}.experience-body ul{font-size:9px}.cert-grid{grid-template-columns:repeat(3,1fr);gap:7px}.cert-tile{min-height:83px;padding:7px}.cert-tile b{font-size:8px}.cert-tile small{font-size:7px}.featured-cert{gap:10px;padding:13px}.featured-tag{font-size:7px;padding:4px 6px}.projects-grid{gap:8px}.project-banner{height:83px;padding:10px}.project-banner b{font-size:12px}.project-info{padding:10px}.project-info h3{font-size:11px}.project-info p{font-size:8px;min-height:85px}.tags{gap:4px}.tags span{font-size:7px;padding:3px 5px}.highlight-grid{grid-template-columns:1fr;gap:7px}.highlight-grid article{padding:12px;display:grid;grid-template-columns:30px 1fr;column-gap:8px}.highlight-icon{grid-row:span 2}.highlight-grid h3{margin:0}.contact-grid{gap:7px}.contact-grid a{padding:9px;grid-template-columns:22px 1fr;column-gap:7px}.contact-grid a>span{width:22px;height:22px}.contact-grid b{font-size:8px}.footer{padding:17px 5%;gap:8px;flex-wrap:wrap}.footer p{font-size:7px}.footer small{font-size:7px}}
 
+/* Part 1 INTRO Open */
+/* =================================
+   MR SHAIK CINEMATIC INTRO
+================================= */
+
+/* ==========================================
+   MR SHAIK — CINEMATIC WELCOME INTRO
+========================================== */
+
+#welcome-intro {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    background: #070910;
+    z-index: 999999;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+.intro-background {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(45, 65, 90, 0.35),
+            transparent 65%
+        );
+}
+
+/* Golden circular ring */
+
+.gold-ring {
+    position: absolute;
+
+    width: min(75vw, 680px);
+    aspect-ratio: 1;
+
+    border: 1.5px solid rgba(221, 178, 91, 0.85);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 20px rgba(221, 178, 91, 0.25),
+        inset 0 0 25px rgba(221, 178, 91, 0.08);
+
+    opacity: 0;
+
+    transform: scale(0.65);
+
+    animation: goldenCircle 2.5s ease 0.3s forwards;
+}
+
+/* Moving light point */
+
+.gold-orbit {
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    top: 7%;
+    left: 50%;
+
+    background: #ffe0a0;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 12px 5px rgba(255, 205, 110, 0.7),
+        0 0 30px rgba(255, 205, 110, 0.5);
+}
+
+@keyframes goldenCircle {
+    0% {
+        opacity: 0;
+        transform: scale(0.65) rotate(-90deg);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.9;
+        transform: scale(1) rotate(270deg);
+    }
+}
+
+/* Intro text */
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+    padding: 20px;
+}
+
+.intro-line {
+    opacity: 0;
+    transform: translateY(35px);
+
+    animation: introTextReveal 1s ease forwards;
+}
+
+.welcome-text {
+    font-size: clamp(18px, 3vw, 35px);
+    font-weight: 300;
+    letter-spacing: 0.28em;
+
+    animation-delay: 0.7s;
+}
+
+.portfolio-text {
+    margin-top: 15px;
+
+    font-size: clamp(45px, 10vw, 110px);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+
+    background: linear-gradient(
+        100deg,
+        #ffffff,
+        #8fd4ff,
+        #ffffff
+    );
+
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    animation-delay: 1.5s;
+}
+
+.name-text {
+    margin-top: 25px;
+
+    font-size: clamp(25px, 4vw, 48px);
+    font-weight: 500;
+    letter-spacing: 0.35em;
+
+    color: #ffffff;
+
+    animation-delay: 2.6s;
+}
+
+.tagline-text {
+    margin-top: 22px;
+
+    font-size: clamp(9px, 1.5vw, 14px);
+    letter-spacing: 0.3em;
+
+    color: #c2cbd5;
+
+    animation-delay: 3.5s;
+}
+
+@keyframes introTextReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Intro exit */
+
+#welcome-intro.intro-hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Portfolio initially hidden */
+
+#main-portfolio {
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
+}
+
+/* Portfolio appears after intro */
+
+#main-portfolio.portfolio-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile responsive */
+
+@media (max-width: 600px) {
+    .gold-ring {
+        width: 94vw;
+    }
+
+    .intro-content {
+        padding: 12px;
+    }
+
+    .welcome-text {
+        letter-spacing: 0.15em;
+    }
+
+    .name-text {
+        letter-spacing: 0.2em;
+    }
+
+    .tagline-text {
+        letter-spacing: 0.1em;
+        line-height: 1.8;
+    }
+}
+
+/* ==========================================
+   END CINEMATIC INTRO
+========================================== */
+
+/* Part 1 INTRO close */
+
+
 /* Continuous left-to-right typing animation */
 /* Start */
-.animated-name {
-    display: inline-block;
+#typingName {
+    display: inline;
+    width: auto;
+    min-width: 0;
     white-space: nowrap;
-    color: #c5a46d;
+    flex-shrink: 0;
 }
 
 .typing-cursor {
     display: inline-block;
-    color: #c5a46d;
-    margin-left: 3px;
-    animation: blink 0.7s infinite;
+    margin-left: 2px;
+    animation: blinkCursor 0.7s infinite;
 }
 
-@keyframes blink {
+@keyframes blinkCursor {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* FIX: Keep profile picture stationary */
+.hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr) !important;
+}
+
+.hero-text {
+    min-width: 0;
+    width: 100%;
+}
+
+.animated-name {
+    display: block !important;
+    width: 100%;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+#typingName {
+    display: inline !important;
+    width: auto !important;
+    min-width: 0 !important;
+    white-space: nowrap;
+}
+
+.typing-cursor {
+    display: inline-block;
+    margin-left: 2px;
+    animation: blinkCursor 0.7s infinite;
+}
+
+@keyframes blinkCursor {
     50% {
         opacity: 0;
     }
@@ -1167,5 +1439,382 @@ body {
     .contact-box {
         max-width: 340px;
         padding: 25px 22px;
+    }
+}
+
+
+#main-portfolio {
+    opacity: 0;
+    visibility: visible;
+    transition: opacity 1.2s ease;
+}
+
+#welcome-intro {
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+/* =====================================
+   WELCOME INTRO - FINAL ADJUSTMENTS
+===================================== */
+
+/* Keep the text safely inside the circle */
+.intro-content {
+    width: min(90vw, 850px);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Reduce PORTFOLIO size */
+.portfolio-text {
+    width: 100%;
+    font-size: clamp(40px, 8vw, 96px);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* Keep golden dot fixed below P */
+.gold-orbit {
+    top: 50%;
+    left: 8%;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%);
+    animation: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .intro-content {
+        width: 96vw;
+        padding: 10px;
+    }
+
+    .portfolio-text {
+        font-size: clamp(35px, 9vw, 55px);
+        letter-spacing: 0.02em;
+    }
+
+    .gold-ring {
+        width: 94vw;
+    }
+}
+
+.animated-name {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    white-space: normal;
+}
+
+#typingName {
+    color: #c5a46d;
+    display: inline-block;
+}
+
+.typing-cursor {
+    color: #c5a46d;
+}
+
+.animated-name {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 12px;
+}
+
+#typingName {
+    display: inline-block;
+    white-space: nowrap;
+    min-width: 270px;
+}
+
+@media (max-width: 600px) {
+    .animated-name {
+        font-size: 30px;
+        gap: 8px;
+    }
+
+    #typingName {
+        min-width: 220px;
+    }
+}
+
+/* Keep profile picture fixed while the name changes */
+#typingName {
+    display: inline-block;
+    width: 250px;
+    min-width: 250px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.animated-name {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+/* Keep image in a fixed position */
+.hero-photo {
+    transform: translateX(15px);
+    flex-shrink: 0;
+}
+
+.animated-name {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+#typingName {
+    display: inline-block;
+    width: 250px;
+    min-width: 250px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.typing-cursor {
+    display: inline-block;
+    margin-left: 0;
+    animation: blinkCursor 0.7s infinite;
+}
+
+@keyframes blinkCursor {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Career Growth Section */
+.growth-section {
+    border-left: none;
+    padding-left: 0;
+}
+
+.growth-heading {
+    color: #c5a46d;
+}
+
+.growth-quote {
+    margin-top: 20px;
+    padding: 15px 18px;
+    border-left: 2px solid #c5a46d;
+    background: rgba(197, 164, 109, 0.07);
+    color: #c5a46d;
+    font-style: italic;
+    line-height: 1.8;
+    border-radius: 4px;
+}
+
+/* =====================================
+   AWARD CERTIFICATE - RIGHT SIDE
+===================================== */
+
+.award-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.award-layout .resume-list {
+    flex: 1;
+    min-width: 0;
+}
+
+.award-certificate {
+    flex: 0 0 180px;
+    width: 180px;
+    height: 125px;
+    padding: 0;
+    border: 1px solid rgba(231,189,67,0.35);
+    border-radius: 8px;
+    background: #111827;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: .3s ease;
+}
+
+.award-certificate img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.award-certificate span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 8px;
+    background: rgba(8,9,16,.85);
+    color: #e7bd43;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: .3s ease;
+}
+
+.award-certificate:hover {
+    transform: translateY(-4px);
+    border-color: #e7bd43;
+    box-shadow: 0 8px 25px rgba(231,189,67,.15);
+}
+
+.award-certificate:hover span {
+    opacity: 1;
+}
+
+
+/* =====================================
+   CLICKABLE AZURE & ORACLE CERTIFICATES
+===================================== */
+
+.azure-logo,
+.oracle-logo {
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    transition: .3s ease;
+}
+
+.azure-logo:hover,
+.oracle-logo:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 15px rgba(231,189,67,.3);
+}
+
+
+/* =====================================
+   CERTIFICATE POPUP
+===================================== */
+
+.certificate-preview-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    background: rgba(0,0,0,.88);
+    backdrop-filter: blur(8px);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+}
+
+.certificate-preview-modal.active {
+    display: flex;
+}
+
+.certificate-preview-box {
+    position: relative;
+    max-width: 950px;
+    max-height: 90vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: certificateZoom .35s ease;
+}
+
+.certificate-preview-box img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+
+    background: white;
+    border-radius: 8px;
+
+    box-shadow: 0 15px 60px rgba(0,0,0,.5);
+}
+
+.certificate-preview-close {
+    position: absolute;
+    top: -38px;
+    right: 0;
+
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid rgba(231,189,67,.5);
+    border-radius: 50%;
+
+    background: #171a26;
+    color: #e7bd43;
+
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.certificate-preview-close:hover {
+    background: #e7bd43;
+    color: #111;
+}
+
+@keyframes certificateZoom {
+    from {
+        opacity: 0;
+        transform: scale(.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* MOBILE RESPONSIVENESS */
+
+@media(max-width:650px) {
+
+    .award-layout {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .award-certificate {
+        width: 160px;
+        height: 110px;
+        flex-basis: auto;
+        align-self: flex-end;
+    }
+
+    .award-certificate span {
+        opacity: 1;
+    }
+
+    .certificate-preview-modal {
+        padding: 15px;
+    }
+
+}
+
+/* AWARD CERTIFICATE - MATCH AZURE IMAGE SIZE */
+
+.award-certificate {
+    width: 110px;
+    height: 85px;
+    flex: 0 0 110px;
+}
+
+/* Mobile size */
+@media (max-width: 650px) {
+    .award-certificate {
+        width: 110px;
+        height: 85px;
+        flex: 0 0 110px;
     }
 }
