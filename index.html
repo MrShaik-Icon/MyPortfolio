@@ -12,47 +12,29 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
- <!--  <script src="script.js"></script> -->
 </head>
 <body>
 
-<!-- CINEMATIC WELCOME INTRO part 1 -->  
-
-<div id="welcome-intro">
-
-    <div class="intro-background"></div>
-
-    <!-- Golden Circular Ring -->
-    <div class="gold-ring">
-
-        <div class="gold-orbit"></div>
-
+<!-- CINEMATIC MR SHAIK INTRO -->
+<div id="welcome-intro" aria-label="Welcome to my portfolio">
+  <div class="intro-background"></div>
+  <div class="intro-grid"></div>
+  <div class="intro-glow intro-glow-one"></div>
+  <div class="intro-glow intro-glow-two"></div>
+  <div class="intro-content">
+    <p class="intro-kicker">WELCOME TO MY</p>
+    <h1 class="portfolio-letters" id="portfolioLetters" aria-label="PORTFOLIO"></h1>
+    <div class="intro-identity">
+      <div class="intro-photo-wrap"><img src="images/profile.jpg" alt="Shaik Khawza" class="intro-photo"></div>
+      <div class="intro-name-wrap">
+        <p class="intro-hi"># HI I AM</p>
+        <h2 class="intro-name">MR SHAIK</h2>
+        <p class="intro-tagline">CREATIVE <span>•</span> PROFESSIONAL <span>•</span> PERSONAL</p>
+      </div>
     </div>
-
-    <!-- Welcome Text -->
-    <div class="intro-content">
-
-        <h2 class="intro-line welcome-text">
-            WELCOME TO MY
-        </h2>
-
-        <h1 class="intro-line portfolio-text">
-            PORTFOLIO
-        </h1>
-
-        <h2 class="intro-line name-text">
-            MR SHAIK
-        </h2>
-
-        <p class="intro-line tagline-text">
-            CREATIVE • PROFESSIONAL • PERSONAL
-        </p>
-
-    </div>
-
-</div>
-
-<!-- CINEMATIC WELCOME INTRO part 1 end  -->  
+    <div class="intro-loading"><span></span></div>
+  </div>
+</div>  
  <main id="main-portfolio">
 <header class="header">
   <a class="logo" href="#home">MR SHAIK<span>.</span></a>
@@ -60,6 +42,7 @@
   <nav id="nav">
     <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
     <a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    
   </nav>
 </header>
 
@@ -534,7 +517,6 @@
 
 
 <footer class="footer"><a class="logo" href="#home">MR SHAIK<span>.</span></a><p>Designed &amp; developed by MR SHAIK</p><small>© <span id="year"></span> All rights reserved.</small></footer>
-<script src="script.js"></script>
 </main>
 <!-- CERTIFICATE IMAGE POPUP -->
 <div class="certificate-preview-modal" id="certificatePreviewModal">

@@ -1818,3 +1818,73 @@ body {
         flex: 0 0 110px;
     }
 }
+
+/* =====================================================
+   CINEMATIC EMERALD / BLUE INTRO - APPEND TO style.css
+   Keep your existing portfolio CSS; this block overrides
+   only the old welcome intro and initial page visibility.
+===================================================== */
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+#welcome-intro {
+  position: fixed; inset: 0; z-index: 99999; overflow: hidden;
+  display: grid; place-items: center; min-height: 100svh;
+  color: #f4ffff; background: #03090d;
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+#welcome-intro .intro-background {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 48%, #0c2730 0%, #06151c 42%, #020609 100%);
+}
+.intro-grid {
+  position: absolute; inset: 0; opacity: .15;
+  background-image: linear-gradient(rgba(70,220,210,.13) 1px, transparent 1px), linear-gradient(90deg, rgba(70,220,210,.13) 1px, transparent 1px);
+  background-size: 54px 54px; mask-image: linear-gradient(to bottom, transparent, #000 25%, #000 75%, transparent);
+}
+.intro-glow { position:absolute; width:42vw; height:42vw; border-radius:50%; filter:blur(90px); opacity:.18; pointer-events:none; }
+.intro-glow-one { background:#00e6a5; left:-15vw; top:15%; }
+.intro-glow-two { background:#087dff; right:-15vw; bottom:5%; }
+.intro-content { position:relative; z-index:2; width:min(1180px,94vw); text-align:center; padding:35px 10px; }
+.intro-kicker { margin:0 0 2px; color:#b7d6d7; font:600 clamp(11px,1.3vw,15px)/1.5 "DM Sans",sans-serif; letter-spacing:.42em; opacity:0; transform:translateY(18px); }
+.portfolio-letters { display:flex; justify-content:center; align-items:center; gap:clamp(0px,.55vw,8px); margin:0 auto; white-space:nowrap; font-family:Impact,"Arial Narrow",sans-serif; font-size:clamp(48px,11.4vw,150px); font-weight:900; line-height:1.05; letter-spacing:.015em; }
+.portfolio-letter { display:inline-block; opacity:0; transform:translateY(35px) scaleY(.65); clip-path:inset(100% 0 0 0); background:linear-gradient(180deg,#e7ffff 0%,#53f4dc 35%,#00b98b 68%,#1684e9 100%); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 0 22px rgba(0,225,190,.16)); }
+.intro-identity { display:flex; justify-content:center; align-items:center; gap:clamp(14px,3vw,38px); margin:clamp(18px,3vw,34px) auto 0; text-align:left; opacity:0; transform:translateY(24px); }
+.intro-photo-wrap { width:clamp(88px,13vw,160px); aspect-ratio: .78; flex:0 0 auto; position:relative; filter:drop-shadow(0 12px 25px rgba(0,0,0,.55)); }
+.intro-photo-wrap::before { content:""; position:absolute; inset:5% -5% -3% 5%; border:1px solid rgba(83,244,220,.65); border-radius:18px; transform:rotate(-5deg); }
+.intro-photo { position:relative; width:100%; height:100%; object-fit:cover; object-position:center top; border:3px solid #d9fff8; border-radius:16px; background:#10232a; }
+.intro-name-wrap { min-width:0; }
+.intro-hi { margin:0 0 3px; color:#60e9d4; font:700 clamp(10px,1.3vw,15px)/1.4 "DM Sans",sans-serif; letter-spacing:.32em; }
+.intro-name { margin:0; color:#f4ffff; font:700 clamp(32px,6vw,70px)/1.05 "DM Sans",sans-serif; letter-spacing:.06em; text-shadow:0 0 28px rgba(0,221,190,.22); }
+.intro-tagline { margin:12px 0 0; color:#a9c6ca; font:600 clamp(8px,1.15vw,13px)/1.5 "DM Sans",sans-serif; letter-spacing:.19em; white-space:nowrap; }
+.intro-tagline span { color:#40e8c9; padding:0 4px; }
+.intro-loading { width:160px; height:2px; margin:34px auto 0; background:rgba(255,255,255,.12); overflow:hidden; }
+.intro-loading span { display:block; width:100%; height:100%; transform:scaleX(0); transform-origin:left; background:linear-gradient(90deg,#00d7a0,#36b9ff); }
+/* Start sequence */
+.intro-start .intro-kicker { animation:introRise .7s .15s ease forwards; }
+.intro-start .portfolio-letter { animation:letterReveal .4s calc(.2s + var(--letter-index)*.18s) cubic-bezier(.2,.75,.25,1) forwards; }
+.intro-start .intro-identity {
+    animation: introRise .65s 2.3s ease forwards;
+}
+.intro-start .intro-loading span { animation:loadingRun 3.5s linear forwards; }
+.intro-exit { opacity:0 !important; visibility:hidden !important; pointer-events:none !important; }
+#main-portfolio { opacity:0; visibility:hidden; pointer-events:none; transition:opacity 1s ease, visibility 1s ease; }
+#main-portfolio.portfolio-visible { opacity:1; visibility:visible; pointer-events:auto; }
+@keyframes letterReveal { 0% {opacity:0;transform:translateY(35px) scaleY(.65);clip-path:inset(100% 0 0 0)} 65% {opacity:1;transform:translateY(-3px) scaleY(1.04);clip-path:inset(0)} 100% {opacity:1;transform:translateY(0) scaleY(1);clip-path:inset(0)} }
+@keyframes introRise { to {opacity:1;transform:translateY(0)} }
+@keyframes loadingRun { to {transform:scaleX(1)} }
+@media (max-width:600px) {
+  .intro-content { width:96vw; padding:20px 4px; }
+  .portfolio-letters { gap:0; font-size:clamp(37px,10.7vw,66px); }
+  .intro-identity { gap:13px; margin-top:25px; }
+  .intro-photo-wrap { width:clamp(76px,24vw,112px); }
+  .intro-name { font-size:clamp(27px,8vw,42px); }
+  .intro-tagline { letter-spacing:.09em; font-size:8px; }
+  .intro-kicker { letter-spacing:.3em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #welcome-intro, #main-portfolio { transition:none; }
+  .intro-start .intro-kicker, .intro-start .portfolio-letter, .intro-start .intro-identity { animation:none; opacity:1; transform:none; clip-path:none; }
+}
+
+
